@@ -164,7 +164,7 @@
     }
     if (true === options.hashbang) hashbang = true;
     if (!dispatch) return;
-    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + (~location.hash.indexOf('?') ? '' : location.search) : location.pathname + location.search + location.hash;
     page.replace(url, null, true, dispatch);
   };
 
